@@ -1,0 +1,16 @@
+#include <cstdio>
+
+using namespace std;
+
+int btod(int bin)
+{
+
+}
+int main()
+{
+  int k;
+  while(scanf("%d",&k) != EOF){
+    
+  }
+  return 0;
+}

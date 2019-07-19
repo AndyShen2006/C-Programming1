@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  int b=4;
+  int a[b];
+  int temp;
+  for(int i=0; i<b; i++){
+    cin >> a[i];
+  }
+  // your code here
+  /*
+  if(a[3]>a[2]){
+    temp=a[2];
+    a[2]=a[3];
+    a[3]=temp;
+  }
+  if(a[2]>a[1]){
+    temp=a[1];
+    a[1]=a[2];
+    a[2]=temp;
+  }
+  if(a[1]>a[0]){
+    temp=a[0];
+    a[0]=a[1];
+    a[1]=temp;
+  }
+  
+  if(a[3]>a[2]){
+    temp=a[2];
+    a[2]=a[3];
+    a[3]=temp;
+  }
+  if(a[2]>a[1]){
+    temp=a[1];
+    a[1]=a[2];
+    a[2]=temp;
+  }
+  
+  if(a[3]>a[2]){
+    temp=a[2];
+    a[2]=a[3];
+    a[3]=temp;
+  }
+  */
+  for(int j=0;j<b;j++){
+    for(int i=b-1;i>j;i--){
+      if(a[i]>a[i-1]){
+	temp=a[i-1];
+	a[i-1]=a[i];
+	a[i]=temp;
+      }
+    }
+  }
+  
+  for(int i=0; i<b; i++){
+    cout << a[i] << ' ';
+  }
+  return 0;
+}

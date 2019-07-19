@@ -1,0 +1,8 @@
+#include <cstdio>
+
+using namespace std;
+
+int main(){
+  char a = 'a';
+  printf("%d",a-'a'+10);
+}

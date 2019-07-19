@@ -1,0 +1,240 @@
+	.file	"friendnumber.cpp"
+	.text
+	.section	.rodata
+	.type	_ZStL19piecewise_construct, @object
+	.size	_ZStL19piecewise_construct, 1
+_ZStL19piecewise_construct:
+	.zero	1
+	.local	_ZStL8__ioinit
+	.comm	_ZStL8__ioinit,1,1
+	.section	.text._ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_,"axG",@progbits,_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_,comdat
+	.weak	_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_
+	.type	_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_, @function
+_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_:
+.LFB1723:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	%edi, -4(%rbp)
+	cvtsi2sd	-4(%rbp), %xmm0
+	call	sqrt@PLT
+	movq	%xmm0, %rax
+	movq	%rax, -16(%rbp)
+	movsd	-16(%rbp), %xmm0
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1723:
+	.size	_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_, .-_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_
+	.text
+	.globl	_Z9factoraddi
+	.type	_Z9factoraddi, @function
+_Z9factoraddi:
+.LFB1722:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movl	%edi, -20(%rbp)
+	movl	$0, -4(%rbp)
+	movl	-20(%rbp), %eax
+	movl	%eax, %edi
+	call	_ZSt4sqrtIiEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_
+	cvttsd2si	%xmm0, %eax
+	movl	%eax, -12(%rbp)
+	movl	$2, -8(%rbp)
+.L6:
+	movl	-8(%rbp), %eax
+	cmpl	-12(%rbp), %eax
+	jg	.L4
+	movl	-20(%rbp), %eax
+	cltd
+	idivl	-8(%rbp)
+	movl	%edx, %eax
+	testl	%eax, %eax
+	jne	.L5
+	movl	-4(%rbp), %edx
+	movl	-8(%rbp), %eax
+	leal	(%rdx,%rax), %ecx
+	movl	-20(%rbp), %eax
+	cltd
+	idivl	-8(%rbp)
+	addl	%ecx, %eax
+	movl	%eax, -4(%rbp)
+.L5:
+	addl	$1, -8(%rbp)
+	jmp	.L6
+.L4:
+	movl	-4(%rbp), %eax
+	addl	$1, %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1722:
+	.size	_Z9factoraddi, .-_Z9factoraddi
+	.section	.rodata
+.LC1:
+	.string	"Program run time is "
+.LC2:
+	.string	"s."
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB1724:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%rbx
+	subq	$56, %rsp
+	.cfi_offset 3, -24
+	call	clock@PLT
+	movq	%rax, -32(%rbp)
+	movl	$220, -20(%rbp)
+.L13:
+	cmpl	$1000000, -20(%rbp)
+	jg	.L9
+	movl	-20(%rbp), %eax
+	movl	%eax, %edi
+	call	_Z9factoraddi
+	movl	%eax, %edi
+	call	_Z9factoraddi
+	cmpl	%eax, -20(%rbp)
+	jne	.L10
+	movl	-20(%rbp), %eax
+	movl	%eax, %edi
+	call	_Z9factoraddi
+	cmpl	%eax, -20(%rbp)
+	jge	.L10
+	movl	$1, %eax
+	jmp	.L11
+.L10:
+	movl	$0, %eax
+.L11:
+	testb	%al, %al
+	je	.L12
+	movl	-20(%rbp), %eax
+	movl	%eax, %esi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZNSolsEi@PLT
+	movl	$44, %esi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+	movq	%rax, %rbx
+	movl	-20(%rbp), %eax
+	movl	%eax, %edi
+	call	_Z9factoraddi
+	movl	%eax, %esi
+	movq	%rbx, %rdi
+	call	_ZNSolsEi@PLT
+	movl	$10, %esi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+.L12:
+	addl	$1, -20(%rbp)
+	jmp	.L13
+.L9:
+	call	clock@PLT
+	movq	%rax, -40(%rbp)
+	movq	-40(%rbp), %rax
+	subq	-32(%rbp), %rax
+	cvtsi2sdq	%rax, %xmm0
+	movsd	.LC0(%rip), %xmm1
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -48(%rbp)
+	leaq	.LC1(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	movq	%rax, %rdx
+	movq	-48(%rbp), %rax
+	movq	%rax, -56(%rbp)
+	movsd	-56(%rbp), %xmm0
+	movq	%rdx, %rdi
+	call	_ZNSolsEd@PLT
+	leaq	.LC2(%rip), %rsi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	movl	$10, %esi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+	movl	$0, %eax
+	addq	$56, %rsp
+	popq	%rbx
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1724:
+	.size	main, .-main
+	.type	_Z41__static_initialization_and_destruction_0ii, @function
+_Z41__static_initialization_and_destruction_0ii:
+.LFB2210:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	cmpl	$1, -4(%rbp)
+	jne	.L17
+	cmpl	$65535, -8(%rbp)
+	jne	.L17
+	leaq	_ZStL8__ioinit(%rip), %rdi
+	call	_ZNSt8ios_base4InitC1Ev@PLT
+	leaq	__dso_handle(%rip), %rdx
+	leaq	_ZStL8__ioinit(%rip), %rsi
+	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
+	movq	%rax, %rdi
+	call	__cxa_atexit@PLT
+.L17:
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2210:
+	.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destruction_0ii
+	.type	_GLOBAL__sub_I__Z9factoraddi, @function
+_GLOBAL__sub_I__Z9factoraddi:
+.LFB2211:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$65535, %esi
+	movl	$1, %edi
+	call	_Z41__static_initialization_and_destruction_0ii
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2211:
+	.size	_GLOBAL__sub_I__Z9factoraddi, .-_GLOBAL__sub_I__Z9factoraddi
+	.section	.init_array,"aw"
+	.align 8
+	.quad	_GLOBAL__sub_I__Z9factoraddi
+	.section	.rodata
+	.align 8
+.LC0:
+	.long	0
+	.long	1093567616
+	.hidden	__dso_handle
+	.ident	"GCC: (Debian 7.3.0-19) 7.3.0"
+	.section	.note.GNU-stack,"",@progbits

@@ -1,0 +1,6 @@
+|------------------------------------WARNING!-------------------------------|
+|Don't name your important file temp* !                                     |
+|Because Any file name is temp* ,It will be deleted by a file called rmtemp.|
+|                                  Andy Shen                                |
+|                               By Mar.12nd.2019                            |
+|---------------------------------------------------------------------------|

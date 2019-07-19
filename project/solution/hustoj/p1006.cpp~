@@ -1,0 +1,12 @@
+#include <cstdio>
+
+using namespace std;
+
+int main(){
+  int k,heavy,tall;
+  while(scanf("%d",&k) != EOF){
+    for(int i=0;i<=k;i++){
+      scanf("%d%d",heavy,tall);
+      printf("%d",heavy/(tall*tall));
+    }  
+  }

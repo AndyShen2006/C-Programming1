@@ -1,0 +1,18 @@
+#include <cstdio>
+#define DEBUG 1
+
+using namespace std;
+
+int main()
+{
+  char c[19];
+  const char co[20][5]={"SP","SY","BY","JN","SZ","JX","SZZ","CN","TC","TX","SS","MJ"};
+#if DEBUG
+  printf("%d","218"-"120");
+#else
+  while(scanf("%s",c) != EOF){
+
+  }
+  #endif
+  return 0;
+}

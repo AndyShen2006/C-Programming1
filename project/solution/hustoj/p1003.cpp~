@@ -1,0 +1,19 @@
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+  int a,sum,k;
+  sum = 0;
+  while(scanf("%d",&k);){
+     if(k == 0)  break;
+    while(k--){
+      scanf("%d",&a);
+      sum+=a;
+    }
+    printf("%d\n",m);
+    sum=0;
+  }
+  return 0;
+}
